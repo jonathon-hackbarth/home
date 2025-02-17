@@ -5,31 +5,31 @@ const navBar = {
 
 // Main Body SECTION
 const mainBody = {
-  gradientColors: "#4484ce, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1",
-  firstName: "Hashir",
+  gradientColors: "#08060B, #09527A, #233F5F, #731E8C, #202340", 
+  firstName: "Jonathon",
   middleName: "",
-  lastName: "Shoaib",
-  message: " Passionate about changing the world with technology. ",
+  lastName: "Hackbarth",
+  message: " Making things that matter ",
   icons: [
     {
-      image: "fa-github",
-      url: "https://github.com/hashirshoaeb",
+      image: "fab fa-github",
+      url: "https://github.com/jonathon-hackbarth",
+    },
+    // {
+    //   image: "fa-facebook",
+    //   url: "https://www.facebook.com/hashirshoaeb",
+    // },
+    // {
+    //   image: "fa-instagram",
+    //   url: "https://www.instagram.com/hashirshoaeb/",
+    // },
+    {
+      image: "fab fa-linkedin",
+      url: "https://www.linkedin.com/in/jonathon-w-hackbarth/",
     },
     {
-      image: "fa-facebook",
-      url: "https://www.facebook.com/hashirshoaeb",
-    },
-    {
-      image: "fa-instagram",
-      url: "https://www.instagram.com/hashirshoaeb/",
-    },
-    {
-      image: "fa-linkedin",
-      url: "https://www.linkedin.com/in/hashirshoaeb/",
-    },
-    {
-      image: "fa-twitter",
-      url: "https://www.twitter.com/hashirshoaeb/",
+      image: "fas fa-envelope",
+      url: "mailto:dev@jonathonhackbarth.com",
     },
   ],
 };
@@ -51,11 +51,11 @@ const mainBody = {
 const about = {
   show: true,
   heading: "About Me",
-  imageLink: require("../editable-stuff/hashirshoaeb.png"),
+  imageLink: require("../editable-stuff/jonathonhackbarth.png"),
   imageSize: 375,
   message:
-    "My name is Hashir Shoaib. I’m a graduate of 2020 from National University of Sciences and Technology at Islamabad with a degree in Computer Engineering. I'm most passionate about giving back to the community, and my goal is to pursue this passion within the field of software engineering. In my free time I like working on open source projects.",
-  resume: "https://docs.google.com/document/d/13_PWdhThMr6roxb-UFiJj4YAFOj8e_bv3Vx9UHQdyBQ/edit?usp=sharing",
+    "My name is Jonathon Hackbarth. I specialize in bridging the gap between business and technology, leveraging expertise in Microsoft 365, Power Platform, Azure, and enterprise automation to solve complex problems and drive meaningful change. With a unique blend of technical depth and strong communication skills, I excel at introducing emerging technologies, simplifying their adoption, and empowering teams to succeed. My career highlights include replacing multi-million-dollar contact centers with Power Apps solutions, building enterprise governance at scale (100k+ users), and mentoring low-code communities to modernize legacy processes. I’m passionate about working on impactful projects that make a difference while staying at the forefront of innovation.",
+  resume: "https://docs.google.com/document/d/1enPulOw_YAEvC105e2d5cczOkIpw6vQ_VtAkaxMMtsQ/edit?tab=t.0",
 };
 
 // PROJECTS SECTION
@@ -66,7 +66,7 @@ const about = {
 const repos = {
   show: true,
   heading: "Recent Projects",
-  gitHubUsername: "hashirshoaeb", //i.e."johnDoe12Gh"
+  gitHubUsername: "jonathon-hackbarth", //i.e."johnDoe12Gh"
   reposLength: 4,
   specificRepos: [],
 };
@@ -79,12 +79,12 @@ const leadership = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae auctor eu augue ut lectus arcu bibendum at varius. Libero justo laoreet sit amet cursus sit amet. Imperdiet dui accumsan sit amet nulla facilisi morbi. At auctor urna nunc id. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Et magnis dis parturient montes nascetur ridiculus mus mauris. In nisl nisi scelerisque eu ultrices vitae auctor. Mattis nunc sed blandit libero volutpat sed cras ornare. Pulvinar neque laoreet suspendisse interdum consectetur libero.",
   images: [
     { 
-      img: require("../editable-stuff/hashirshoaeb.png"), 
+      img: require("../editable-stuff/jonathonhackbarth.png"), 
       label: "First slide label", 
       paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
     },
     { 
-      img: require("../editable-stuff/hashirshoaeb.png"), 
+      img: require("../editable-stuff/jonathonhackbarth.png"), 
       label: "Second slide label", 
       paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
     },
@@ -99,26 +99,34 @@ const leadership = {
 const skills = {
   show: true,
   heading: "Skills",
-  hardSkills: [
-    { name: "Python", value: 90 },
-    { name: "SQL", value: 75 },
-    { name: "Data Structures", value: 85 },
-    { name: "C/C++", value: 65 },
-    { name: "JavaScript", value: 90 },
-    { name: "React", value: 65 },
-    { name: "HTML/CSS", value: 55 },
-    { name: "C#", value: 80 },
-  ],
-  softSkills: [
-    { name: "Goal-Oriented", value: 80 },
-    { name: "Collaboration", value: 90 },
-    { name: "Positivity", value: 75 },
-    { name: "Adaptability", value: 85 },
-    { name: "Problem Solving", value: 75 },
-    { name: "Empathy", value: 90 },
-    { name: "Organization", value: 70 },
-    { name: "Creativity", value: 90 },
-  ],
+hardSkills: [
+  { name: "Microsoft 365 Administration", value: 95 },
+  { name: "Power Platform", value: 90 },
+  { name: "Power Apps", value: 90 },
+  { name: "Power Automate", value: 90 },
+  { name: "Power BI", value: 90 },
+  { name: "Azure", value: 85 },
+  { name: "Automation", value: 85 },
+  { name: "Entra", value: 85 },
+  { name: "PowerShell", value: 80 },
+  { name: "SharePoint Administration", value: 85 },
+  { name: "Web Design & Full Stack Development", value: 70 },
+  { name: "Networking & Hardware Management", value: 65 },
+],
+
+softSkills: [
+  { name: "Problem Solving", value: 95 },
+  { name: "Troubleshooting", value: 95 },
+  { name: "Collaboration", value: 90 },
+  { name: "Communication", value: 90 },
+  { name: "Adaptability to Emerging Technologies", value: 95 },
+  { name: "Mentorship & Leadership", value: 85 },
+  { name: "Client Relationship Management", value: 90 },
+  { name: "Technical Training & Enablement", value: 85 },
+  { name: "Business-Technology Alignment", value: 90 },
+  { name: "Empathy & Patience with Clients", value: 85 },
+],
+
 };
 
 // GET IN TOUCH SECTION
@@ -126,8 +134,8 @@ const getInTouch = {
   show: true,
   heading: "Get In Touch",
   message:
-    "I'm currently looking for full-time Software Engineering or Machine Learning opportunities! If you know of any positions available, if you have any questions, or if you just want to say hi, please feel free to email me at",
-  email: "hashirshoaeb@gmail.com",
+    "I’m currently looking for remote, flexible opportunities in technology consulting, enterprise automation, or emerging tech adoption. If you’re hiring for a role where I can help bridge the gap between business and technology or if you have any questions, feel free to email me at", 
+  email: "dev@jonathonhackbarth.com",
 };
 
 const experiences = {
@@ -135,21 +143,21 @@ const experiences = {
   heading: "Experiences",
   data: [
     {
-      role: 'Software Engineer',// Here Add Company Name
-      companylogo: require('../assets/img/dell.png'),
+      role: 'M365 Administrator',// Here Add Company Name
+      companylogo: 'Test',
       date: 'June 2018 – Present',
     },
     {
-      role: 'Front-End Developer',
-      companylogo: require('../assets/img/boeing.png'),
-      date: 'May 2017 – May 2018',
+      role: 'Various Roles',
+      companylogo: 'Test',
+      date: 'August 2007 – June 2018',
     },
   ]
 }
 
 // Blog SECTION
 // const blog = {
-//   show: false,
+//   show: true,
 // };
 
 export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences };

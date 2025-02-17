@@ -1,58 +1,77 @@
-import React, { useState } from "react";
-import { useScrollPosition } from "../hooks/useScrollPosition";
-import useResizeObserver from "../hooks/useResizeObserver";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 
-const Navigation = React.forwardRef((props, ref) => {
-  // const { showBlog, FirstName } = config;
+const Navigation = React.forwardRef(({ aboutMeRef }, ref) => {
   const [isTop, setIsTop] = useState(true);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const navbarMenuRef = React.useRef();
-  const navbarDimensions = useResizeObserver(navbarMenuRef);
-  const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      if (!navbarDimensions) return;
-      currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
-        ? setIsTop(true)
-        : setIsTop(false);
-      setScrollPosition(currPos.y);
-    },
-    [navBottom]
-  );
+  const [expanded, setExpanded] = useState(false);
+  const navbarMenuRef = useRef();
 
-  React.useEffect(() => {
-    if (!navbarDimensions) return;
-    navBottom - scrollPosition >= ref.current.offsetTop
-      ? setIsTop(false)
-      : setIsTop(true);
-  }, [navBottom, navbarDimensions, ref, scrollPosition]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.boundingClientRect.top < 0) {
+          setIsTop(false);
+        } else {
+          setIsTop(true);
+        }
+      },
+      {
+        threshold: [0],
+        rootMargin: "0px 0px -100% 0px" // Adjust this value as needed
+      }
+    );
+
+    const aboutMeCurrent = aboutMeRef.current;
+
+    if (aboutMeCurrent) {
+      observer.observe(aboutMeCurrent);
+    }
+
+    return () => {
+      if (aboutMeCurrent) {
+        observer.unobserve(aboutMeCurrent);
+      }
+    };
+  }, [aboutMeRef]);
+
+  const handleNavLinkClick = () => {
+    setExpanded(false);
+  };
 
   return (
     <Navbar
       ref={navbarMenuRef}
-      className={`px-3 fixed-top  ${!isTop ? "navbar-white" : "navbar-transparent"
-        }`}
+      className={`px-3 fixed-top ${!isTop ? "navbar-white" : "navbar-transparent"}`}
       expand="lg"
+      expanded={expanded}
     >
       <Navbar.Brand className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
         {`<${mainBody.firstName} />`}
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
+      <Navbar.Toggle
+        aria-controls="basic-navbar-nav"
+        className="toggler"
+        onClick={() => setExpanded(!expanded)}
+      />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar-nav mr-auto">
-          {/* {
-            <NavLink className="nav-item lead">
-              <Link to={process.env.PUBLIC_URL + "/blog"}>Blog</Link>
-            </NavLink>
-          } */}
-          {repos.show && (
-
+          {about.show && (
             <NavLink
+              className="nav-item lead"
+              href={process.env.PUBLIC_URL + "/#aboutme"}
+              onClick={handleNavLinkClick}
+            >
+              About
+            </NavLink>
+          )}
+          {repos.show && (
+            <NavLink
+              className="nav-item lead"
               href={process.env.PUBLIC_URL + "/#projects"}
+              onClick={handleNavLinkClick}
             >
               Projects
             </NavLink>
@@ -62,21 +81,15 @@ const Navigation = React.forwardRef((props, ref) => {
             href={about.resume}
             target="_blank"
             rel="noreferrer noopener"
+            onClick={handleNavLinkClick}
           >
             Resume
           </NavLink>
-          {about.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#aboutme"}
-            >
-              About
-            </NavLink>
-          )}
           {skills.show && (
             <NavLink
               className="nav-item lead"
               href={process.env.PUBLIC_URL + "/#skills"}
+              onClick={handleNavLinkClick}
             >
               Skills
             </NavLink>

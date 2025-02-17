@@ -5,6 +5,8 @@ import { Jumbotron } from "./migration";
 
 const MainBody = React.forwardRef(
   ({ gradient, title, message, icons }, ref) => {
+    const jumbotronRef = React.useRef();
+
     return (
       <Jumbotron
         fluid
@@ -14,6 +16,7 @@ const MainBody = React.forwardRef(
           backgroundSize: "1200% 1200%",
         }}
         className="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
+        ref={jumbotronRef}
       >
         <div id="stars"></div>
         <Container className="text-center">
@@ -34,7 +37,7 @@ const MainBody = React.forwardRef(
                 href={icon.url}
                 aria-label={`My ${icon.image.split("-")[1]}`}
               >
-                <i className={`fab ${icon.image}  fa-3x socialicons`} />
+                <i className={`${icon.image}  fa-3x socialicons`} />
               </a>
             ))}
           </div>
