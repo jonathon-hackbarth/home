@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/home/static/css/main.a40cf06f.css",
+    "main.js": "/home/static/js/main.233eda4a.js",
+    "static/js/787.4b24f717.chunk.js": "/home/static/js/787.4b24f717.chunk.js",
+    "static/media/jonathonhackbarth.png": "/home/static/media/jonathonhackbarth.82ddcf222ce5381b3565.png",
+    "index.html": "/home/index.html",
+    "main.a40cf06f.css.map": "/home/static/css/main.a40cf06f.css.map",
+    "main.233eda4a.js.map": "/home/static/js/main.233eda4a.js.map",
+    "787.4b24f717.chunk.js.map": "/home/static/js/787.4b24f717.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a40cf06f.css",
+    "static/js/main.233eda4a.js"
+  ]
+}
