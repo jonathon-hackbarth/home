@@ -8,7 +8,7 @@ import {
   leadership,
   skills,
   getInTouch,
-  experiences
+  experiences,
 } from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
@@ -43,9 +43,7 @@ const Home = React.forwardRef(({ aboutMeRef }, ref) => {
           aboutMeRef={aboutMeRef}
         />
       )}
-      {experiences.show && (
-        <Experience experiences={experiences} />
-      )}
+      {experiences.show && <Experience experiences={experiences} />}
       {repos.show && (
         <Project
           heading={repos.heading}
@@ -79,10 +77,20 @@ const App = () => {
   const aboutMeRef = React.useRef();
 
   return (
-    <BrowserRouter basename="home/">
-      {navBar.show && <Navbar mainBodyRef={mainBodyRef} jumbotronRef={jumbotronRef} aboutMeRef={aboutMeRef} />}
+    <BrowserRouter basename="home">
+      {navBar.show && (
+        <Navbar
+          mainBodyRef={mainBodyRef}
+          jumbotronRef={jumbotronRef}
+          aboutMeRef={aboutMeRef}
+        />
+      )}
       <Routes>
-        <Route path="/" exact element={<Home ref={mainBodyRef} aboutMeRef={aboutMeRef} />} />
+        <Route
+          path="/"
+          exact
+          element={<Home ref={mainBodyRef} aboutMeRef={aboutMeRef} />}
+        />
       </Routes>
       <Footer>
         {getInTouch.show && (
