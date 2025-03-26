@@ -135,7 +135,7 @@ const getInTouch = {
   heading: "Get In Touch",
   message:
     "I’m currently looking for remote, flexible opportunities in technology consulting, enterprise automation, or emerging tech adoption. If you’re hiring for a role where I can help bridge the gap between business and technology or if you have any questions, feel free to email me at",
-  email: "dev@jonathonhackbarth.com",
+  email: "me@jonathonhackbarth.com",
 };
 
 const experiences = {
